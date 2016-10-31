@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  background-color: lightslategrey;
+  font-family: sans-serif;
+
+  font-size: 1.5vw;
+}
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: serif;
+}
+
+header {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: darkslategrey;
+}
+
+header img {
+  padding: 0.25em;
+  height: 3em;
+  width: auto;
+  border: 1px solid darkslategrey;
+}
+
+header nav ul {
+  white-space: nowrap;
+  list-style-type: none;
+  color: #fff;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a
+{
+  padding: 0.6em 1em 0.3em;
+  margin: 0 0.25em;
+  border: 1px solid darkslategrey;
+  background-color: lightslategrey;
+  text-decoration: none;
+  float: left;
+  color: darkslategrey;
+}
+
+header nav ul li a:hover
+{
+  color: darkslategrey;
+  background-color: lightsalmon;
+}
+
+footer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    color: yellow;
+    background: midnightblue;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+main .sidebar {
+  flex: 0 0 12em;
+  padding: 1em;
+  margin: 0.25em;
+}
+
+main .sidebar:first-of-type {
+  background-color: LightSalmon;
+}
+
+main .sidebar:last-of-type {
+  background-color: LightSteelBlue;
+}
+
+main .articles {
+  padding: 1em;
+  margin: 0.25em;
+  background: DarkSeaGreen;
+}
+
+article {
+  margin: 1em 0 0.5em;
+  background-color: white;
+  border: thin solid transparent;
+}
+
+article:nth-of-type(2n+1){
+  border-radius: 25px 0px 25px 0px;
+  -moz-border-radius: 25px 0px 25px 0px;
+  -webkit-border-radius: 25px 0px 25px 0px;
+}
+
+article:nth-of-type(2n+1) header{
+  border-radius: 25px 0px 0px 0px;
+  -moz-border-radius: 25px 0px 0px 0px;
+  -webkit-border-radius: 25px 0px 0px 0px;
+}
+
+article:nth-of-type(2n){
+  border-radius: 0px 25px 0px 25px;
+  -moz-border-radius: 0px 25px 0px 25px;
+  -webkit-border-radius: 0px 25px 0px 25px;
+}
+
+article:nth-of-type(2n) header{
+  border-radius: 0px 25px 0px 0px;
+  -moz-border-radius: 0px 25px 0px 0px;
+  -webkit-border-radius: 0px 25px 0px 0px;
+}
+
+article header h3,
+article header time,
+article p {
+  padding: 0.5em;
+}
+
+article header,
+article header a {
+  border: thin solid transparent;
+  color: white;
+}
+
+footer img {
+  padding: 0.25em;
+  height: 3em;
+  width: auto;
+}
+
+footer img:last-of-type {
+  /*
+  https://css-tricks.com/snippets/css/flip-an-image/
+  */
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+footer p {
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    font-size: 12px;
+    min-width: 300px;
+  }
+
+  main {
+    display: row;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  main .sidebar {
+    order: 3;
+    flex: 1;
+  }
+
+  main .sidebar,
+  main .articles {
+    min-width: 300px;
+    padding: 1em;
+    margin: 0.25em;
+    align-content: space-around;
+  }
+}
